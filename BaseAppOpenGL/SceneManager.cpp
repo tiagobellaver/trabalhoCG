@@ -73,8 +73,8 @@ bool CSceneManager::InitGL(void)
 	glDepthFunc(GL_LEQUAL);								// The Type Of Depth Testing To Do
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);	// Really Nice Perspective Calculations
 
-	glCullFace(GL_CCW);
-	glEnable(GL_CULL_FACE);
+	//glCullFace(GL_CCW);
+	//glEnable(GL_CULL_FACE);
 
 	SetVSync(true);		// Habilita ou desabilita sincronização vertical (VSYNC)
 
