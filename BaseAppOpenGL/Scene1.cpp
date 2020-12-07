@@ -86,10 +86,10 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 	pCamera->setView();
 
 	// Desenha grid 
-	//Draw3DSGrid(50.0f, 50.0f);
+	Draw3DSGrid(50.0f, 50.0f);
 
 	// Desenha os eixos
-	//DrawAxis();
+	DrawAxis();
 
 	// Modo FILL ou WIREFRAME (pressione barra de espaço)	
 	if (bIsWireframe)
@@ -122,6 +122,152 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 	glPopMatrix();
 
 
+	//chão plat
+
+	glColor3ub(25, 55, 255);
+	glPushMatrix();
+	glTranslatef(4.0f, 0.0f, -4.0f);
+	glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
+	
+	glBegin(GL_QUADS);
+
+	glVertex3f(-6.0f, -6.0f, -1.0f); //Vértice inferior esquerdo
+	glVertex3f(6.0f, -6.0f, -1.0f); //Vértice inferior direito
+	glVertex3f(6.0f, 6.0f, -1.0f); //Vértice superior direito
+	glVertex3f(-6.0f, 6.0f, -1.0f); //Vértice superior esquerdo
+
+	glEnd();
+
+	glPopMatrix();
+
+	//parede plat 1
+	glColor3ub(255, 255, 255);
+	glPushMatrix();
+
+	glTranslatef(4.0f, 8.0f, 3.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(6.0f, 7.0f, -1.0f); //Vértice inferior esquerdo
+	glVertex3f(-6.0f, 7.0f, -1.0f);
+	glVertex3f(-6.0f, -7.0f, -1.0f);
+	glVertex3f(6.0f, -7.0f, -1.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	//parede plat 2
+	glColor3ub(255, 255, 255);
+	glPushMatrix();
+
+	glTranslatef(4.0f, 8.0f, -9.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(6.0f, 7.0f, -1.0f); //Vértice inferior esquerdo
+	glVertex3f(-6.0f, 7.0f, -1.0f);
+	glVertex3f(-6.0f, -7.0f, -1.0f);
+	glVertex3f(6.0f, -7.0f, -1.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+
+	//parede plat 3
+	glColor3ub(255, 255, 255);
+
+	glPushMatrix();
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glTranslatef(4.0f, 8.0f, -1.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(6.0f, 7.0f, -1.0f); //Vértice inferior esquerdo
+	glVertex3f(-6.0f, 7.0f, -1.0f);
+	glVertex3f(-6.0f, -7.0f, -1.0f);
+	glVertex3f(6.0f, -7.0f, -1.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+
+	//parede plat 4
+	glColor3ub(255, 255, 255);
+
+	glPushMatrix();
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glTranslatef(4.0f, 8.0f, 11.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(6.0f, 7.0f, -1.0f); //Vértice inferior esquerdo
+	glVertex3f(-6.0f, 7.0f, -1.0f);
+	glVertex3f(-6.0f, -7.0f, -1.0f);
+	glVertex3f(6.0f, -7.0f, -1.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+
+	//parede port 1
+	glColor3ub(205, 25, 55);
+
+	glPushMatrix();
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glTranslatef(-9.0f, 8.0f, -20.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(4.0f, 8.0f, 0.0f); //Vértice inferior esquerdo
+	glVertex3f(-4.0f, 8.0f, 0.0f);
+	glVertex3f(-4.0f, -8.0f, 0.0f);
+	glVertex3f(4.0f, -8.0f, 0.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	//parede port 2
+	glColor3ub(205, 25, 55);
+
+	glPushMatrix();
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glTranslatef(7.0f, 8.0f, -20.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(4.0f, 8.0f, 0.0f); //Vértice inferior esquerdo
+	glVertex3f(-4.0f, 8.0f, 0.0f);
+	glVertex3f(-4.0f, -8.0f, 0.0f);
+	glVertex3f(4.0f, -8.0f, 0.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+
+	//parede port 3
+	glColor3ub(205, 25, 55);
+
+	glPushMatrix();
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glTranslatef(-1.0f, 12.0f, -20.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(4.0f, 5.0f, 0.0f); //Vértice inferior esquerdo
+	glVertex3f(-4.0f, 5.0f, 0.0f);
+	glVertex3f(-4.0f, -5.0f, 0.0f);
+	glVertex3f(4.0f, -5.0f, 0.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
 	//teto
 	glColor3ub(105, 105, 105);
 	glPushMatrix();
@@ -130,10 +276,10 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 
 	glBegin(GL_QUADS);
 
-	glVertex3f(-20.0f, -20.0f, 15.0f); //Vértice inferior esquerdo
-	glVertex3f(20.0f, -20.0f, 15.0f); //Vértice inferior direito
-	glVertex3f(20.0f, 20.0f, 15.0f); //Vértice superior direito
-	glVertex3f(-20.0f, 20.0f, 15.0f); //Vértice superior esquerdo
+	glVertex3f(-20.0f, -20.0f, -15.0f); //Vértice inferior esquerdo
+	glVertex3f(20.0f, -20.0f, -15.0f); //Vértice inferior direito
+	glVertex3f(20.0f, 20.0f, -15.0f); //Vértice superior direito
+	glVertex3f(-20.0f, 20.0f, -15.0f); //Vértice superior esquerdo
 
 	glEnd();
 
@@ -144,7 +290,7 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 	glColor3ub(105, 105, 205);
 	glPushMatrix();
 
-	glTranslatef(0.0f, -7.5f, 0.0f);
+	glTranslatef(0.0f, 7.5f, 0.0f);
 
 	glBegin(GL_QUADS);
 
@@ -161,7 +307,7 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 	glColor3ub(205, 105, 205);
 	glPushMatrix();
 
-	glTranslatef(0.0f, -7.5f, 0.0f);
+	glTranslatef(0.0f, 7.5f, 0.0f);
 
 	glBegin(GL_QUADS);
 
@@ -180,7 +326,7 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 
 	glPushMatrix();
 
-	glTranslatef(0.0f, -7.5f, 0.0f);
+	glTranslatef(0.0f, 7.5f, 0.0f);
 
 	glBegin(GL_QUADS);
 
@@ -197,7 +343,7 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 	glColor3ub(205, 105, 205);
 	glPushMatrix();
 
-	glTranslatef(15.0f, -7.5f, 0.0f);
+	glTranslatef(15.0f, 7.5f, 0.0f);
 
 	glBegin(GL_QUADS);
 
@@ -214,7 +360,7 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 	glColor3ub(205, 105, 205);
 	glPushMatrix();
 
-	glTranslatef(-16.0f, -7.5f, 0.0f);
+	glTranslatef(-16.0f, 7.5f, 0.0f);
 
 	glBegin(GL_QUADS);
 
@@ -232,7 +378,7 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 
 	glPushMatrix();
 
-	glTranslatef(-16.0f, -7.5f, 4.0f);
+	glTranslatef(-16.0f, 7.5f, 4.0f);
 
 	glBegin(GL_QUADS);
 
@@ -250,7 +396,7 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 	
 	glPushMatrix();
 
-	glTranslatef(4.0f, -7.5f, -16.0f);
+	glTranslatef(4.0f, 7.5f, -16.0f);
 	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
 	glBegin(GL_QUADS);
 
@@ -268,7 +414,7 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 
 	glPushMatrix();
 
-	glTranslatef(-4.0f, -7.5f, -11.0f);
+	glTranslatef(-4.0f, 7.5f, -11.0f);
 	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
 	glBegin(GL_QUADS);
 
@@ -286,7 +432,7 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 
 	glPushMatrix();
 
-	glTranslatef(15.0f, -7.5f, 4.0f);
+	glTranslatef(15.0f, 7.5f, 4.0f);
 
 	glBegin(GL_QUADS);
 
@@ -300,11 +446,11 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 	glPopMatrix();
 
 	//canto5
-	glColor3ub(155, 195, 135);
+	glColor3ub(155, 255, 135);
 
 	glPushMatrix();
 
-	glTranslatef(4.0f, -7.5f, 4.0f);
+	glTranslatef(4.0f, 7.5f, 4.0f);
 	glRotatef(45.0f, 0.0f, 1.0f, 0.0f);
 
 	glBegin(GL_QUADS);
@@ -317,6 +463,321 @@ int CScene1::DrawGLScene(void)	// Função que desenha a cena
 	glEnd();
 
 	glPopMatrix();
+
+	//chão
+
+	glColor3ub(255, 255, 255);
+	glPushMatrix();
+	glTranslatef(1.0f, 0.0f, -32.0f);
+	glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(-16.0f, -12.0f, 0.0f); //Vértice inferior esquerdo
+	glVertex3f(16.0f, -12.0f, 0.0f); //Vértice inferior direito
+	glVertex3f(16.0f, 12.0f, 0.0f); //Vértice superior direito
+	glVertex3f(-16.0f, 12.0f, 0.0f); //Vértice superior esquerdo
+
+	glEnd();
+
+	glPopMatrix();
+
+	//teto 2
+
+	glColor3ub(255, 2, 255);
+	glPushMatrix();
+	glTranslatef(1.0f, 0.0f, -32.0f);
+	glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(-16.0f, -12.0f, -15.0f); //Vértice inferior esquerdo
+	glVertex3f(16.0f, -12.0f, -15.0f); //Vértice inferior direito
+	glVertex3f(16.0f, 12.0f, -15.0f); //Vértice superior direito
+	glVertex3f(-16.0f, 12.0f, -15.0f); //Vértice superior esquerdo
+
+	glEnd();
+
+	glPopMatrix();
+
+	//parede5
+	glColor3ub(255, 200, 0);
+	glPushMatrix();
+
+	glTranslatef(1.0f, 7.5f, -24.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(16.0f, 7.5f, -20.0f); //Vértice inferior esquerdo
+	glVertex3f(-16.0f, 7.5f, -20.0f);
+	glVertex3f(-16.0f, -7.5f, -20.0f);
+	glVertex3f(16.0f, -7.5f, -20.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	//parede 6
+	glColor3ub(255, 195, 135);
+
+	glPushMatrix();
+
+	glTranslatef(1.0f, 7.5f, -32.0f);
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glBegin(GL_QUADS);
+
+	glVertex3f(12.0f, 7.5f, -16.0f); //Vértice inferior esquerdo
+	glVertex3f(-12.0f, 7.5f, -16.0f);
+	glVertex3f(-12.0f, -7.5f, -16.0f);
+	glVertex3f(12.0f, -7.5f, -16.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	//canto5
+	glColor3ub(55, 255, 255);
+
+	glPushMatrix();
+
+	glTranslatef(-25.0f, 7.5f, -54.0f);
+	glRotatef(45.0f, 0.0f, 1.0f, 0.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(4.0f, 7.5f, 18.2f); //Vértice inferior esquerdo
+	glVertex3f(-4.0f, 7.5f, 18.2f);
+	glVertex3f(-4.0f, -7.5f, 18.2f);
+	glVertex3f(4.0f, -7.5f, 18.2f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	// parede 7
+
+	glColor3ub(255, 195, 135);
+
+	glPushMatrix();
+
+	glTranslatef(33.0f, 7.5f, -38.0f);
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glBegin(GL_QUADS);
+
+	glVertex3f(6.0f, 7.5f, -16.0f); //Vértice inferior esquerdo
+	glVertex3f(-6.0f, 7.5f, -16.0f);
+	glVertex3f(-6.0f, -7.5f, -16.0f);
+	glVertex3f(6.0f, -7.5f, -16.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	// parede 7
+
+	glColor3ub(255, 195, 135);
+
+	glPushMatrix();
+
+	glTranslatef(33.0f, 7.5f, -22.0f);
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glBegin(GL_QUADS);
+
+	glVertex3f(2.0f, 7.5f, -16.0f); //Vértice inferior esquerdo
+	glVertex3f(-2.0f, 7.5f, -16.0f);
+	glVertex3f(-2.0f, -7.5f, -16.0f);
+	glVertex3f(2.0f, -7.5f, -16.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	// parede 8
+
+	glColor3ub(255, 255, 255);
+
+	glPushMatrix();
+
+	glTranslatef(33.0f, 11.5f, -26.0f);
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glBegin(GL_QUADS);
+
+	glVertex3f(6.0f, 4.0f, -16.0f); //Vértice inferior esquerdo
+	glVertex3f(-6.0f, 4.0f, -16.0f);
+	glVertex3f(-6.0f, -4.0f, -16.0f);
+	glVertex3f(6.0f, -4.0f, -16.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	//chão
+
+	glColor3ub(255, 0, 255);
+	glPushMatrix();
+	glTranslatef(30.0f, 0.0f, -28.0f);
+	glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(-13.0f, -8.0f, 0.0f); //Vértice inferior esquerdo
+	glVertex3f(13.0f, -8.0f, 0.0f); //Vértice inferior direito
+	glVertex3f(13.0f, 8.0f, 0.0f); //Vértice superior direito
+	glVertex3f(-13.0f, 8.0f, 0.0f); //Vértice superior esquerdo
+
+	glEnd();
+
+	glPopMatrix();
+
+	//teto
+
+	glColor3ub(255, 0, 255);
+	glPushMatrix();
+	glTranslatef(30.0f, 0.0f, -28.0f);
+	glRotatef(90.0f, 1.0f, 0.0f, 0.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(-13.0f, -8.0f, -7.5f); //Vértice inferior esquerdo
+	glVertex3f(13.0f, -8.0f, -7.5f); //Vértice inferior direito
+	glVertex3f(13.0f, 8.0f, -7.5f); //Vértice superior direito
+	glVertex3f(-13.0f, 8.0f, -7.5f); //Vértice superior esquerdo
+
+	glEnd();
+
+	glPopMatrix();
+
+	//parede5
+	glColor3ub(255, 200, 0);
+	glPushMatrix();
+
+	glTranslatef(30.0f, 3.8f, -16.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(13.0f, 3.8f, -20.0f); //Vértice inferior esquerdo
+	glVertex3f(-13.0f, 3.8f, -20.0f);
+	glVertex3f(-13.0f, -3.8f, -20.0f);
+	glVertex3f(13.0f, -3.8f, -20.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	//parede5
+	glColor3ub(255, 200, 0);
+	glPushMatrix();
+
+	glTranslatef(30.0f, 3.8f, 0.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(13.0f, 3.8f, -20.0f); //Vértice inferior esquerdo
+	glVertex3f(-13.0f, 3.8f, -20.0f);
+	glVertex3f(-13.0f, -3.8f, -20.0f);
+	glVertex3f(13.0f, -3.8f, -20.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	// parede 7
+
+	glColor3ub(255, 195, 135);
+
+	glPushMatrix();
+
+	glTranslatef(55.0f, 7.5f, -22.0f);
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glBegin(GL_QUADS);
+
+	glVertex3f(2.0f, 7.5f, -16.0f); //Vértice inferior esquerdo
+	glVertex3f(-2.0f, 7.5f, -16.0f);
+	glVertex3f(-2.0f, -7.5f, -16.0f);
+	glVertex3f(2.0f, -7.5f, -16.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	// parede 7
+
+	glColor3ub(255, 195, 135);
+
+	glPushMatrix();
+
+	glTranslatef(55.0f, 7.5f, -34.0f);
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glBegin(GL_QUADS);
+
+	glVertex3f(2.0f, 7.5f, -16.0f); //Vértice inferior esquerdo
+	glVertex3f(-2.0f, 7.5f, -16.0f);
+	glVertex3f(-2.0f, -7.5f, -16.0f);
+	glVertex3f(2.0f, -7.5f, -16.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+
+	// parede 7
+
+	glColor3ub(255, 195, 135);
+
+	glPushMatrix();
+
+	glTranslatef(41.0f, 7.5f, -16.0f);
+	
+	glBegin(GL_QUADS);
+
+	glVertex3f(2.0f, 7.5f, -16.0f); //Vértice inferior esquerdo
+	glVertex3f(-2.0f, 7.5f, -16.0f);
+	glVertex3f(-2.0f, -7.5f, -16.0f);
+	glVertex3f(2.0f, -7.5f, -16.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+	// parede 7
+
+	glColor3ub(255, 195, 135);
+
+	glPushMatrix();
+
+	glTranslatef(41.0f, 7.5f, -8.0f);
+
+	glBegin(GL_QUADS);
+
+	glVertex3f(2.0f, 7.5f, -16.0f); //Vértice inferior esquerdo
+	glVertex3f(-2.0f, 7.5f, -16.0f);
+	glVertex3f(-2.0f, -7.5f, -16.0f);
+	glVertex3f(2.0f, -7.5f, -16.0f);
+
+	glEnd();
+
+	glPopMatrix();
+
+
+	// parede 7
+
+	glColor3ub(255, 195, 135);
+
+	glPushMatrix();
+
+	glTranslatef(55.0f, 7.5f, -28.0f);
+	glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+	glBegin(GL_QUADS);
+
+	glVertex3f(4.0f, 7.5f, -12.0f); //Vértice inferior esquerdo
+	glVertex3f(-4.0f, 7.5f, -12.0f);
+	glVertex3f(-4.0f, -7.5f, -12.0f);
+	glVertex3f(4.0f, -7.5f, -12.0f);
+
+	glEnd();
+
+	glPopMatrix();
+	
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//                               DESENHA OS OBJETOS DA CENA (FIM)
